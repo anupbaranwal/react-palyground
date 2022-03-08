@@ -1,22 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Greeting from "./Greeting";
-import Sample from "./Sample";
 
 const App = (props) => {
-  const countries = ["India", "UK", "Russia", "US"];
-  const name = "Anup";
+  const [counter, setCounter] = useState(0);
 
-  const callBackParentFunction = (message) => {
-    console.log(message);
+  const incrementHandler = () => {
+    setCounter(counter + 1);
   };
 
   return (
     <>
-      <h2>Below is the child component</h2>
-      <hr />
-      <Sample countries={countries} />
-      <Greeting name={name} parentCallback={callBackParentFunction} />
+      <h2>{counter}</h2>
+      <button onClick={incrementHandler}>Increment</button>
     </>
   );
 };
