@@ -2,17 +2,9 @@ import React from "react";
 import "./App.css";
 
 const App = (props) => {
-  const cities = ["Mumbai", "Bengaluru", "Chennai"];
+  const showGreetings = true;
 
-  return (
-    <>
-      <ul>
-        {cities.map((city) => (
-          <li>{city}</li>
-        ))}
-      </ul>
-    </>
-  );
+  return <>{showGreetings ? <h3>Good Morning!!!</h3> : null}</>;
 };
 
 export default App;
