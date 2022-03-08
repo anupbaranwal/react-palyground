@@ -2,14 +2,9 @@ import React from "react";
 import "./App.css";
 
 const App = (props) => {
-  const handleInput = (e) => {
-    console.log(e.target.value);
-  };
+  const jsxGoodMorning = <h3>Good Morning~~</h3>;
+  const jsxGoodAfternoon = <h3>Good Afternoon~~</h3>;
 
-  return (
-    <>
-      <input type="text" onInput={handleInput} />
-    </>
-  );
+  return <>{[jsxGoodAfternoon, jsxGoodMorning]}</>;
 };
 export default App;
