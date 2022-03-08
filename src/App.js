@@ -1,10 +1,15 @@
 import React from "react";
 import "./App.css";
+import Sample from "./Sample";
 
 const App = (props) => {
-  const showGreetings = true;
-
-  return <>{showGreetings ? <h3>Good Morning!!!</h3> : null}</>;
+  return (
+    <>
+      <h2>Below is the child component</h2>
+      <hr />
+      <Sample />
+    </>
+  );
 };
 
 export default App;
