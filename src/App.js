@@ -1,22 +1,18 @@
 import React from "react";
 import "./App.css";
 
-const Add = (a, b) => {
-  return a + b;
-};
-
-const currentTime = () => {
-  return 10;
-};
-
 const App = (props) => {
-  const hiThereJsx = <h3>Hi there</h3>;
-  const helloWorldJsx = <p>Hello There!</p>;
+  let counter = 0;
+
+  const increaseTheCounter = () => {
+    //This doesn't changes the value of counter in the View. But in console it changes
+    console.log("counter new Value is " + ++counter);
+  };
+
   return (
     <>
-      {hiThereJsx} {helloWorldJsx}
-      Add of 5 + 6 is: {Add(5, 6)}
-      {currentTime() < 12 ? <h3>Good Morning</h3> : <h3>Good Afternoon</h3>}
+      <h3>{counter}</h3>
+      <button onClick={increaseTheCounter}>Increment</button>
     </>
   );
 };
