@@ -1,5 +1,13 @@
 const Sample = (props) => {
-  return <h3>Sample Child Component</h3>;
+  return (
+    <>
+      <ul>
+        {props.countries?.map((country) => (
+          <li>{country}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default Sample;
