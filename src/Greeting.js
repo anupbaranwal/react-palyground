@@ -1,7 +1,7 @@
 const Greeting = (props) => {
-  const greetBack = () => {
+  const greetBack = (greetingMessage) => {
     if (!!props.parentCallback) {
-      props.parentCallback();
+      props.parentCallback(greetingMessage);
     }
   };
   return (
@@ -9,7 +9,9 @@ const Greeting = (props) => {
       <h2>Hello {props.name}!!</h2>
       <h2> How are you?</h2>
       <hr />
-      <button onClick={greetBack}>Greet Back!!</button>
+      <button onClick={() => greetBack("I am good!! How about you?")}>
+        Greet Back!!
+      </button>
     </>
   );
 };

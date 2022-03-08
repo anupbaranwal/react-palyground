@@ -7,8 +7,8 @@ const App = (props) => {
   const countries = ["India", "UK", "Russia", "US"];
   const name = "Anup";
 
-  const callBackParentFunction = () => {
-    console.log("I am good!! How about you?");
+  const callBackParentFunction = (message) => {
+    console.log(message);
   };
 
   return (
