@@ -4,6 +4,7 @@ import "./App.css";
 
 const App = (props) => {
   const [counter, setCounter] = useState(0);
+  const countries = ["India", "Nepal", "France", "USA"];
 
   const incrementHandler = () => {
     setCounter(counter + 1);
@@ -13,7 +14,8 @@ const App = (props) => {
     <>
       <h2>{counter}</h2>
       <button onClick={incrementHandler}>Increment</button>
-      {counter % 2 === 0 ? <Sample /> : null}
+      <hr />
+      {counter % 2 === 0 ? <Sample countries={countries} /> : null}
     </>
   );
 };
