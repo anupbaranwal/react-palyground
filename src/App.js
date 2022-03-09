@@ -1,21 +1,33 @@
-import React, { useState } from "react";
 import Sample from "./Sample";
 import "./App.css";
 
 const App = (props) => {
-  const [counter, setCounter] = useState(0);
   const countries = ["India", "Nepal", "France", "USA"];
 
-  const incrementHandler = () => {
-    setCounter(counter + 1);
+  const foo = () => {
+    return (
+      <p>
+        Component embedding from parent to child (invoked through callback from
+        child)
+      </p>
+    );
   };
-
   return (
     <>
-      <h2>{counter}</h2>
-      <button onClick={incrementHandler}>Increment</button>
+      <h3> Hello World!!!</h3>
       <hr />
-      {counter % 2 === 0 ? <Sample countries={countries} /> : null}
+      <Sample
+        countries={countries}
+        foo={foo}
+        inlineEmbeddingCallback={() => {
+          return (
+            <p>
+              Inline Component embedding from parent to child (invoked through
+              callback from child)
+            </p>
+          );
+        }}
+      />
     </>
   );
 };
