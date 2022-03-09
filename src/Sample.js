@@ -7,9 +7,6 @@ const Sample = (props) => {
         ))}
       </ul>
       <hr />
-      {props.foo()}
-      <hr />
-      {props.inlineEmbeddingCallback()}
     </>
   );
 };

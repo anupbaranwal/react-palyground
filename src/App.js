@@ -1,33 +1,29 @@
-import Sample from "./Sample";
 import "./App.css";
+import { useState } from "react";
 
 const App = (props) => {
-  const countries = ["India", "Nepal", "France", "USA"];
+  const [counter, setCounter] = useState(0);
 
-  const foo = () => {
-    return (
-      <p>
-        Component embedding from parent to child (invoked through callback from
-        child)
-      </p>
-    );
+  //don't use this approach for thread safety of counter
+  const updateTheCounter = () => {
+    setCounter(counter + 1);
   };
+
+  // follow this approach
+  const updateTheCounter1 = () => {
+    setCounter(() => {
+      return counter + 1;
+    });
+  };
+
   return (
     <>
       <h3> Hello World!!!</h3>
       <hr />
-      <Sample
-        countries={countries}
-        foo={foo}
-        inlineEmbeddingCallback={() => {
-          return (
-            <p>
-              Inline Component embedding from parent to child (invoked through
-              callback from child)
-            </p>
-          );
-        }}
-      />
+      <p>Counter is {counter}</p>
+      <button className="btn btn-primary" onClick={updateTheCounter1}>
+        Update The Counter
+      </button>
     </>
   );
 };
