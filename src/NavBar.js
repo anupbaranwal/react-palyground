@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
@@ -28,9 +27,9 @@ const Navbar = (props) => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/blog/2022/03/09">
+            <NavLink className="nav-link" to="/blog/2022/03/09">
               Blog
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

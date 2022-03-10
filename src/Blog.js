@@ -1,16 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Blog = (props) => {
-  console.log(props.match); //  check this as well
   const { year, month, day } = useParams(); //  more convenient way
+  const [users, setUsers] = useState({});
+
+  const loadBlogUsers = () => {
+    axios.get("https://reqres.in/api/users?page=2").then((res) => {
+      setUsers(() => {
+        return res.data;
+      });
+    });
+  };
+
   return (
-    <React.Fragment>
-      <p>Blog published on </p>
-      <p>Year: {year}</p>
-      <p>Month: {month}</p>
-      <p>Day: {day}</p>
-    </React.Fragment>
+    <>
+      <button className="btn btn-primary" onClick={loadBlogUsers}>
+        Load Blog Users
+      </button>
+      <p>
+        Blog published on {day}-{month}-{year}
+      </p>
+      <hr />
+      <pre>{JSON.stringify(users, null, 2)}</pre>
+    </>
   );
 };
 
