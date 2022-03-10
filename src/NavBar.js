@@ -31,6 +31,11 @@ const Navbar = (props) => {
               Blog
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/useRefSample">
+              Use Ref Hook
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </React.Fragment>
