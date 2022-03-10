@@ -37,12 +37,14 @@ const Blog = (props) => {
           {users.map((user) => {
             return (
               <tr key={user.id}>
-                <td className="fw-bold">{user.id}</td>
+                <td className={user.id % 2 === 0 ? "fw-bold" : null}>
+                  {user.id}
+                </td>
                 <td>{user.first_name}</td>
                 <td>{user.last_name}</td>
                 <td>{user.email}</td>
                 <td>
-                  <img src={user.avatar} alt="avatar" height="60" />
+                  <img src={user.avatar} alt="avatar" width="60" height="60" />
                 </td>
               </tr>
             );
